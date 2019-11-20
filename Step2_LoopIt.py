@@ -14,38 +14,90 @@ import pandas as pd
 import os, sys
 from psychopy import visual, core, event, gui, logging
 
-# open a white full screen window
-win = visual.Window(fullscr=True, allowGUI=False, color='white', unit='height') 
-
-# uncomment if you use a clock. Optional because we didn't cover timing this week, 
-# but you can find examples in the tutorial code 
-#trialClock = core.Clock()
+stim =['redred.png','yellowgreen.png','yellowblue.png','greenyellow.png']
+#correct_answer= ['r','g','b','y']
 
 
-#%% your loop here
-# start by copying your one trial here, then identify what needs to be
-# changed on every trial.  Likely your stimuli, but you might want to change a few things
-
-
-# make a list or a pd.DataFrame that contains trial-specific info (stimulus, etc)
-# e.g. stim = ['1.jpg','2.jpg','3.jpg']
-
-
-# make your loop
-for t in ... :
+#loop begins 
+for x in range(len(stim)):
+    #first window
+    win = visual.Window(size=(1536,864), allowGUI=False, color='white')
+    text=visual.TextStim(win=win,text="""For each image you are presented tap the key that corresponds to the colour of the word:
+    g = green, b = blue,
+    r = red, y = yellow.
+    When you are ready to begin press the SPACE bar""",pos=(0,0),color='black')
+   
+    text.draw()
     
-    # include your trial code in your loop but replace anything that should 
-    # change on each trial with a variable that uses your iterater
-    # e.g. thisStimName = stim[t]
-    #      thisStim = visual.ImageStim(win, image=thisStimName ...)
+    win.flip()
+    keys = event.waitKeys(keyList =['space'])
     
-    # if you're recording responses, be sure to store your responses in a list
-    # or DataFrame which also uses your iterater!
-
-
-#%% Required clean up
-# this cell will make sure that your window displays for a while and then 
-# closes properly
-
-core.wait(2)
+    #stimuli 1
+    file = r'C:\Users\asamson\Desktop\Stroop\redred.png'
+    current_stim = visual.ImageStim(win, image=file, pos=(0,0))
+    text=visual.TextStim(win=win,text="""Tap the key that corresponds to the colour of the word:
+    g = green, b = blue,
+    r = red, y = yellow""",pos=(0,-.7),color='black')
+    
+    current_stim.draw()
+    text.draw()
+    
+    win.flip()
+    keys=event.waitKeys(keyList=('g','b','r','y'))
+    print(keys)
+    
+    #stimuli 2
+    file = r'C:\Users\asamson\Desktop\Stroop\yellowgreen.png'
+    current_stim = visual.ImageStim(win, image=file, pos=(0,0))
+    text=visual.TextStim(win=win,text="""Tap the key that corresponds to the colour of the word:
+    g = green, b = blue,
+    r = red, y = yellow""",pos=(0,-.7),color='black')
+    
+    current_stim.draw()
+    text.draw()
+    
+    win.flip()
+    keys=event.waitKeys(keyList=('g','b','r','y'))
+    print(keys)
+    
+    #stimuli 3
+    file = r'C:\Users\asamson\Desktop\Stroop\yellowblue.png'
+    current_stim = visual.ImageStim(win, image=file, pos=(0,0))
+    text=visual.TextStim(win=win,text="""Tap the key that corresponds to the colour of the word:
+    g = green, b = blue,
+    r = red, y = yellow""",pos=(0,-.7),color='black')
+    
+    current_stim.draw()
+    text.draw()
+    
+    win.flip()
+    keys=event.waitKeys(keyList=('g','b','r','y'))
+    print(keys)
+    
+    #stimuli 4
+    file = r'C:\Users\asamson\Desktop\Stroop\greenyellow.png'
+    current_stim = visual.ImageStim(win, image=file, pos=(0,0))
+    text=visual.TextStim(win=win,text="""Tap the key that corresponds to the colour of the word:
+    g = green, b = blue,
+    r = red, y = yellow""",pos=(0,-.7),color='black')
+    
+    current_stim.draw()
+    text.draw()
+    
+    win.flip()
+    keys=event.waitKeys(keyList=('g','b','r','y'))
+    print(keys)
+    
+    #last window
+    file = r'C:\Users\asamson\Desktop\Stroop\2.jpg'
+    current_stim = visual.ImageStim(win, image=file, pos=(0,0))
+    text=visual.TextStim(win=win,text="THE END",pos=(0,-.2),color='black')
+    
+    current_stim.draw()
+    text.draw()
+    
+    win.flip()
+    core.wait(2)
+    
 win.close()
+print(keys)
