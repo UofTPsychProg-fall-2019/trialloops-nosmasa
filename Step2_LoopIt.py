@@ -5,6 +5,14 @@ Build a trial loop Step 2
 Use this template to turn Step 1 into a loop
 @author: katherineduncan
 """
+
+#This a short version of the Stroop experiment. 
+#The experiement has no time constraints whereby the participant has as much time to answer. 
+#The participant is required to hit the key on the keyboard that corresponds to the first letter of the colour that the physical word is
+#in NOT the name of the colour that is printed. 
+#The participant can only hit one of the four keys to proceed to the next round (either: r,g,b,y corresponding to red, green, blue, and yellow).
+#This experiment is designed for geriatrics because they are able to move at their own pace. 
+
 #%% Required set up 
 # this imports everything you might need and opens a full screen window
 # when you are developing your script you might want to make a smaller window 
