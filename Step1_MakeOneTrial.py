@@ -19,18 +19,7 @@ import random
 
 # open a white full screen window
 win = visual.Window(fullscr=True, allowGUI=False, color='white') 
-
-# uncomment if you use a clock. Optional because we didn't cover timing this week, 
-# but you can find examples in the tutorial code 
-#trialClock = core.Clock()
-
-#%% up to you!
-# this is where you build a trial that you might actually use one day!
-# just try to make one trial ordering your lines of code according to the 
-# sequence of events that happen on one trial
-# if you're stuck you can use the responseExercise.py answer as a starting point 
-
-# maybe start by making stimulus objects (e.g. myPic = visual.ImageStim(...))  
+ 
 #Step1
 congRed=visual.ImageStim(win,r'C:\Users\asamson\Desktop\Stroop\redred.png')
 text=visual.TextStim(win,text="""Tap the key that corresponds to the colour of the word:
